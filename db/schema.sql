@@ -1,13 +1,17 @@
-DROP DATABASE IF EXISTS burgers_db:
-CREATE burgers_db;
+DROP DATABASE IF EXISTS `burgers_db`;
+CREATE DATABASE `burgers_db`;
+
 USE burgers_db;
 
-DROP TABLE IF EXISTS burgers;
+CREATE TABLE burgers 
 
-CREATE TABLE burgers(
-    id INTEGER auto_increment not null,
-   burger_name VARCHAR(50),
-   devoured BOOLEAN DEFAULT false,
-   date TIMESTAMP not null DEFAULT current_timestamp,
-   primary key(id)
-   );
+(
+
+id INT AUTO_INCREMENT NOT NULL,
+burger_name VARCHAR (255) NOT NULL,
+devoured BOOLEAN NOT NULL DEFAULT 0,
+ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+dt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (id)
+
+);
